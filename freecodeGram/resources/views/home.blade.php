@@ -16,7 +16,22 @@
             <div class="pt-4 font-weight-bold">freeCodeCamp.org</div>
             <div>We're a global community of millions of people learning to code together.
                 LearnToCodeRPG: https://www.freecodecamp.org/news/learn-to-code-rpg/</div>
+                <div><a href="#">www.freecodecamp.org</a></div>
         </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col-4" class="w-100">
+            <img src="">
+        </div>
+
+        <div class="col-4" class="w-100">
+            <img src="">
+        </div>
+
+        <div class="col-4" class="w-100">
+            <img src="">
+        </div>
+
     </div>
 </div>
 @endsection
