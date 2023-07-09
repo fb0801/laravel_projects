@@ -11,6 +11,8 @@ php artisan ui:auth
 
 this will then make the auth file
 
+Ensure you are in the correct dir otherwise it will not run artisan commands
+
 <h2>Resouces used:</h2>
 
 https://www.youtube.com/watch?v=ImtZ5yENzgE&pp=ygUHbGFyYXZlbA%3D%3D
