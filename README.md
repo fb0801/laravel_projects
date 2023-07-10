@@ -1,5 +1,6 @@
 # laravel_projects
-Building a instagram clone using Laravel
+Building a instagram clone using Laravel using tutorial by <a href="https://www.youtube.com/watch?v=ImtZ5yENzgE&pp=ygUHbGFyYXZlbA%3D%3D
+">freecodecamp>/a>
 
 ## Changes made:
 
