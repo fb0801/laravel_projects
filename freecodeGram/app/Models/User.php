@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
+use App\Mail\NewUserWelcomeMail;
+use Illuminate\Support\Facades\Mail;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -42,6 +46,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            $user->profile()->create([
+                'title' => $user->username,
+            ]);
+
+            Mail::to($user->email)->send(new NewUserWelcomeMail());
+        });
+    }
 
     public function posts(){
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
