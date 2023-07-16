@@ -11,6 +11,11 @@ class PostsController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
+
+    public function index() {
+
+        $users = auth()->following()->pluck('user_id');
+    }
     public function create(){
         return view('posts.create');
     }

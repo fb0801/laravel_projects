@@ -21,9 +21,10 @@ Auth::routes();
 
 Route::post('follow/{user}', 'FollowsController@store');
 
+Route::get('/', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
-Route::get('/p/{post}', 'PostsController@show');
 Route::get('/p', 'PostsController@store');
+Route::get('/p/{post}', 'PostsController@show');
 
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 Route::get('/profile/{user}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');
