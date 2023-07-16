@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 class PostsController extends Controller
@@ -14,7 +15,9 @@ class PostsController extends Controller
 
     public function index() {
 
-        $users = auth()->following()->pluck('user_id');
+        $users = auth()->following()->pluck('profiles.user_id');
+
+        $posts = Post::whereIn('user_id', $users)->orderBy('created_at', 'DESC')->get();
     }
     public function create(){
         return view('posts.create');
